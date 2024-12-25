@@ -1,0 +1,66 @@
+<h1 class="mt20"> Questions of {{title}} Quiz</h1>
+
+<div class="bootstrap-wrapper">
+    <div class="row">
+        <div class="col-md-12">
+
+
+
+            <mat-card *ngFor="let q of questions; let i=index" class="mt20">
+                <mat-card-content>
+                    <p>
+                        <b> Q.{{i+1}}) </b> <span style="margin-left:5px;" [innerHTML]="q.content"></span>
+                    </p>
+
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p>
+                                    a) {{q.opt1}}
+                                </p>
+                            </div>
+
+                            <div class="col-md-6">
+                                <p>
+                                    b) {{q.opt2}}
+                                </p>
+                            </div>
+
+                            <div class="col-md-6">
+                                <p>
+                                    c) {{q.opt3}}
+                                </p>
+                            </div>
+
+                            <div class="col-md-6">
+                                <p>
+                                    d) {{q.opt4}}
+                                </p>
+                            </div>
+
+                        </div>
+
+                        <mat-divider></mat-divider>
+
+                        <p style="margin-top: 15px;">Correct Answer is : <b>{{q.ans}}</b></p>
+
+                        <mat-divider></mat-divider>
+
+                    </div>
+                </mat-card-content>
+                <mat-card-actions>
+                    <div class="text-center" style="margin-bottom: 5px;">
+
+                        <button mat-raised-button color="primary" style="margin-right:20px">Update</button>
+                        <button (click)="deleteQue(q.queId)" mat-raised-button color='accent'>Delete</button>
+                    </div>
+                </mat-card-actions>
+            </mat-card>
+
+            <div class="container text-center mt20 mb20">
+                <button [routerLink]="['/admin/add-question/' + qId + '/' + title]" mat-raised-button color="primary">
+                    Add Question</button>
+            </div>
+        </div>
+    </div>
+</div>

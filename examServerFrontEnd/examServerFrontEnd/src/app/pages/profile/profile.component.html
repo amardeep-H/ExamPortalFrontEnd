@@ -1,0 +1,57 @@
+<mat-card *ngIf="user">
+    <!-- {{user|json}} -->
+    <h3>Your Profile Details</h3>
+    <mat-card-content>
+        <div class="bootstrap-wrapper">
+            <div class="container">
+
+                <div class="container text-center">
+                    <img class="profile-image" src="favicon.ico" alt="user_icon">
+                    <h1 style="margin-top: 20px;">
+                        Amardeep Bhagwatrao Honmane
+                    </h1>
+
+
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md-10 offset-md-1">
+                        <!-- Table Details -->
+                        <table class="table text-center">
+                            <tr>
+                                <td>Username</td>
+                                <td>{{user.username}}</td>
+                            </tr>
+
+                            <tr>
+                                <td>UserId</td>
+                                <td>Exam{{user.id}}</td>
+                            </tr>
+
+                            <tr>
+                                <td>Phone Number</td>
+                                <td>{{user.phone}}</td>
+                            </tr>
+
+                            <tr>
+                                <td>Role</td>
+                                <td>{{user.authorities[0].authority}}</td>
+                            </tr>
+
+                            <tr>
+                                <td>Status</td>
+                                <td>{{user.enabled?"ACTIVE":"NOT ACTIVE"}}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+
+    <mat-card-actions class="text-center">
+        <button mat-raised-button color="primary">UPDATE</button>
+        <button mat-raised-button color="accent">SHARE</button>
+    </mat-card-actions>
+</mat-card>

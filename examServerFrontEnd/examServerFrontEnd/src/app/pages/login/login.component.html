@@ -1,0 +1,51 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3" style="margin-top:20px ;">
+                <mat-card>
+                    <div class="container text-center">
+                        <img class="circular-logo" src="../../../assets/student-cartoon.png" alt="logo">
+                    </div>
+
+                    <h5 class="text-center">Welcome back,<h1>Log in here</h1>
+                    </h5>
+
+                    <!-- {{loginData | json}} -->
+                    <form (ngSubmit)="formSubmit()">
+                        <div class="text-center">
+                            <!-- username field -->
+                            <mat-form-field class="full-width" appearance="outline">
+                                <mat-label>Username</mat-label>
+                                <input [(ngModel)]="loginData.username" name="username" matInput placeholder="Username"
+                                    required>
+                                <mat-hint>Username must be Valid.</mat-hint>
+                            </mat-form-field>
+
+
+                            <!-- password field -->
+                            <mat-form-field class="full-width" appearance="outline">
+                                <mat-label>Password</mat-label>
+                                <input [(ngModel)]="loginData.password" name="password" matInput placeholder="password"
+                                    required>
+                            </mat-form-field>
+
+                            <!-- Login and Cancel button -->
+                            <div class="container text-center">
+                                <button mat-raised-button color="primary" type="submit"
+                                    style="margin:5px;">Login</button>
+                                
+                                    <button (click)="clearData()" mat-raised-button color="accent"
+                                        style="margin-left:10px;">Cancel</button>
+                                
+                            </div>
+
+                        </div>
+
+                    </form>
+
+
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

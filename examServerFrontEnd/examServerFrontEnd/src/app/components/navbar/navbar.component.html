@@ -1,0 +1,36 @@
+<p>
+    <mat-toolbar color="primary">
+        <a routerLink="/" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+            <mat-icon>menu_book</mat-icon>
+        </a>
+        <span routerLink="/">Exam Portal</span>
+
+
+        <span class="example-spacer"></span>
+        <a *ngIf="!isLoggedIn"  routerLink="/login" style="margin-left: 10px; margin-right: 20px;"
+            mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+            <mat-icon></mat-icon>Login
+        </a>
+
+        <a *ngIf="!isLoggedIn" routerLink="/signup" style="margin-left: 10px; margin-right: 50px;"
+            mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+            <mat-icon></mat-icon>Register
+        </a>
+
+
+       
+
+
+<!-- logOut button will only be seen while user or admin is logged in -->
+        <a (click)="logout()" *ngIf="isLoggedIn" style=" margin-right: 30px;"
+            mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+            <mat-icon></mat-icon>Logout
+        </a>
+
+        <a routerLink="/admin/profile" style="margin-right: 10px;" *ngIf="isLoggedIn && user" style="margin-right: 50px;"
+            mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+            <mat-icon></mat-icon>
+           {{loginService.getUser().username}}
+        </a>
+    </mat-toolbar>
+</p>
