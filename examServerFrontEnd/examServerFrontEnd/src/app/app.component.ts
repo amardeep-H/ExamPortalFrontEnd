@@ -7,6 +7,6 @@ import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'examServerFrontEnd';
+  title = 'examPortalFrontEnd';
   public Editor = ClassicEditor;
 }

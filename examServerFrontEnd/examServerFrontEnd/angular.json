@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "examServerFrontEnd": {
+    "examPortalFrontEnd": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/exam-server-front-end",
+            "outputPath": "dist/exam-portal-front-end",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -53,13 +53,16 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "optimization": true,
+              "buildOptimizer": true,
+              "baseHref": "/examPortal/"
             },
             "development": {
-              "buildOptimizer": false,
-              "optimization": false,
+              "buildOptimizer": true,
+              "optimization": true,
               "vendorChunk": true,
-              "extractLicenses": false,
+              "extractLicenses": true,
               "sourceMap": true,
               "namedChunks": true
             }
@@ -70,10 +73,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "examServerFrontEnd:build:production"
+              "browserTarget": "examPortalFrontEnd:build:production"
             },
             "development": {
-              "browserTarget": "examServerFrontEnd:build:development"
+              "browserTarget": "examPortalFrontEnd:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -81,7 +84,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "examServerFrontEnd:build"
+            "browserTarget": "examPortalFrontEnd:build"
           }
         },
         "test": {
@@ -105,5 +108,7 @@
       }
     }
   },
-  "defaultProject": "examServerFrontEnd"
+  "cli": {
+    "analytics": "37f930c4-e2d6-4234-920d-877505a6eb44"
+  }
 }
